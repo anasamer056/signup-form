@@ -4,6 +4,8 @@
     padding: 0;
 }
 
+/* layout */
+
 body {
     height: 100vh;
 }
@@ -11,10 +13,35 @@ body {
 .main-container {
     display: flex;
     max-height: 100%;
+   flex-wrap: wrap;
+}
+
+.content {
+    flex: 3 1 0;
+    
+    margin: 0 auto;
 }
 
 .side-image {
+    flex: 1 1 0;
     max-height: 100%;
-    width: auto;
 }
+
+.form-control{
+    position: relative;
+} 
+
+input{
+    padding: 1px 3px;
+}
+
+label {
+    position: absolute;
+    left: 0.5rem;
+}
+
+.name {
+    display: flex;
+}
+
 
