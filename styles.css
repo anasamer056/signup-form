@@ -16,10 +16,17 @@ body {
    flex-wrap: wrap;
 }
 
+.center {
+   
+    
+}
 .content {
     flex: 3 1 0;
-    
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
+    padding: 16px;
+
 }
 
 .side-image {
@@ -27,7 +34,7 @@ body {
     background-image: url(/assets/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    min-width: 30vw;
+    min-width: max(30vw, 300px);
 }
 
 .form-control{
@@ -45,6 +52,7 @@ label {
 
 .name {
     display: flex;
+    flex-wrap: wrap;
 }
 
 
