@@ -63,7 +63,7 @@ input[type="number"] {
     width: 100%;
 }
 
-button {
+.submin-button {
   flex: 1;
 }
 
@@ -82,12 +82,10 @@ label {
 
 .center{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-content: center;
-    > * {
+    /* > * {
        flex:0 0 auto; 
-    }
+    } */
 }
 
 .flex-input {
@@ -121,7 +119,7 @@ input[type="checkbox"] {
   
 }
 
-/* font */
+/* style */
 
 h1, .logo {
     font-family: 'Bebas Neue', sans-serif;
@@ -129,11 +127,24 @@ h1, .logo {
 
 h1 {
     font-size: 3rem;
+    display: inline;
     text-align: center;
-    color: #2B6E4F;
+    background: linear-gradient(to right, #063F4A, #035E3B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 p {
     text-align: center;
     color: #555555;
+}
+
+.submit-button {
+    padding: 8px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(to right, #063F4A, #035E3B);
 }
