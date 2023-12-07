@@ -3,7 +3,9 @@
 
 :root {
     --error-svg-icon: url("data:image/svg+xml,%3Csvg width='13px' height='13px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1.5-5.009c0-.867.659-1.491 1.491-1.491.85 0 1.509.624 1.509 1.491 0 .867-.659 1.509-1.509 1.509-.832 0-1.491-.642-1.491-1.509zM11.172 6a.5.5 0 0 0-.499.522l.306 7a.5.5 0 0 0 .5.478h1.043a.5.5 0 0 0 .5-.478l.305-7a.5.5 0 0 0-.5-.522h-1.655z' fill='%23D93025'/%3E%3C/svg%3E");
-    --input-gap: 19px;
+    --input-vertical-gap: 23px;
+    --input-horizontal-gap: 12px;
+
 }
 
 :root.light {
@@ -94,7 +96,7 @@ label {
 form {
     display: flex;
     flex-direction: column;
-    gap: var(--input-gap);
+    gap: var(--input-vertical-gap);
     margin-top: 16px;
 }
 .relative {
@@ -122,7 +124,7 @@ form {
 
 .flex-input {
     display: flex;
-    gap: var(--input-gap);
+    gap: var(--input-horizontal-gap);
     > span {
         align-self: center;
       
@@ -134,7 +136,7 @@ input[type="checkbox"] {
 }
 .confirm {
     display: flex;
-
+    margin: -10px 0px;
     > p {
         text-align: left;
     }
@@ -185,7 +187,7 @@ label {
 input {
     background: transparent;
     border: 1px solid var(--input-border-color);
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 .submit-button {
@@ -229,9 +231,22 @@ input {
     background: var(--green-2);
 }
 
+input:user-invalid:required{
+    border: 2px solid red;
+    position: relative;
+    ~ div::before {
+        position: absolute;
+        top: 47px;
+        color: var(--error-color);
+        height: 100%;
+        content: "\002003 \002000 " ' ' "field required";
+        background-image: var(--error-svg-icon);
+        background-repeat: no-repeat;
+        font-size: 0.7rem;
+    }
+}
 
-
-input:invalid{
+input:invalid:not(:placeholder-shown){
     border: 2px solid red;
     position: relative;
     ~ div::before {
@@ -243,11 +258,10 @@ input:invalid{
         background-image: var(--error-svg-icon);
         background-repeat: no-repeat;
         font-size: 0.7rem;
-       
     }
-
-    
 }
+
+
 
 /* animation */
 
@@ -259,7 +273,7 @@ input:focus:not([type="checkbox"]) + label,
 input:not(:placeholder-shown)+ label
  {
     top: -6px;
-    left: 5px;
+    left: 8px;
     background-color: var(--bg-color);
     padding: 0 6px;
     font-size: 0.7rem;
