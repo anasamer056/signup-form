@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,21 +18,21 @@ body {
    flex-wrap: wrap;
 }
 
-.center {
-   
-    
-}
+
 .content {
-    flex: 3 1 0;
-    display: flex;
+    flex: 1 1 0;    
     justify-content: center;
-    margin: 0 auto;
     padding: 16px;
+
+}
+.container {
+    max-width: 70ch;
+    margin: 0 auto;
 
 }
 
 .side-image {
-    flex: 2 1 0;
+    flex: 1 1 0;
     background-image: url(/assets/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,8 +43,19 @@ body {
     position: relative;
 } 
 
-input{
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     padding: 1px 3px;
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 100%;
+
+}
+button {
+    width: 100%;
 }
 
 label {
@@ -50,9 +63,51 @@ label {
     left: 0.5rem;
 }
 
-.name {
+.center{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    > * {
+       flex:0 0 auto; 
+    }
 }
 
+.birthday {
+    display: flex;
+    width: 100px;
+}
 
+.temp-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.temp {
+    background-color: aqua;
+
+}
+input[type="checkbox"] {
+    height: fit-content;
+}
+.confirm {
+    display: flex;
+    gap: 1px;
+}
+
+/* font */
+
+h1, .logo {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #2B6E4F;
+}
+
+p {
+    text-align: center;
+    color: #555555;
+}

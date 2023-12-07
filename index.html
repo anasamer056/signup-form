@@ -13,37 +13,76 @@
         <div class="side-image"></div>
     
         <div class="content">
-            <div class="center">
-                <div>
-                    Logo
+            <div class="container">
+                <div class="logo">
+                    Evergreen
                 </div>
-                <div>
+                <h1>
                     New to Evergreen?
-                </div>
-                <div>
+                </h1>
+                <p>
                     Create an account and join us to help create a greener future for our kids!
-                </div>
+                </p>
                 <form action="https://httpbin.org/" method="post">
-                    <div class="name">
-                        <div class="form-control">
-                            <label for="first-name">
-                                First name
-                            </label>
-                            <input type="text" name="first-name" id="first-name">
-                        </div>
-                        <div class="form-control">
-                            <label for="last-name">
-                                Last name
-                            </label>
-                            <input type="text" name="last-name" id="last-name">
-                        </div>
-                    </div>
                     <div class="form-control">
                         <label for="first-name">
                             First name
                         </label>
                         <input type="text" name="first-name" id="first-name">
                     </div>
+                    <div class="form-control">
+                        <label for="last-name">
+                            Last name
+                        </label>
+                        <input type="text" name="last-name" id="last-name">
+                    </div>
+                    <div class="form-control">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="form-control">
+                        <label for="password">
+                            Password
+                        </label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div class="form-control">
+                        <label for="confirm-password">
+                            Confirm password
+                        </label>
+                        <input type="password" name="" id="confirm-password">
+                    </div>
+                    <div class="temp-container">
+                        <span>Birthday: </span>
+                        <div class="form-control">
+                            <label for="day">
+                                Day
+                            </label>
+                            <input type="number" name="birth-day" id="day">
+                        </div>  
+                        <div class="form-control">
+                            <label for="month">
+                                Month
+                            </label>
+                            <input type="number" name="birth-month" id="month">
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="year">
+                                Year
+                            </label>
+                            <input type="number" name="birth-year" id="year">
+                        </div>
+                    </div>
+
+                    <div class="confirm">
+                        <input type="checkbox" name="confirm-sub" id="confirm-sub">
+                        <p for="confirm-sub">Get emails from Stripe about product updates, industry news, and events. If you change your mind, you can unsubscribe at any time. <a href="#">Privacy Policy</a></p>
+                    </div>
+                    <button type="submit">Create account</button>
+                    
                 </form>
             </div>
         </div>
