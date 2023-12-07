@@ -35,8 +35,8 @@ body {
 }
 .container {
     max-width: 70ch;
+    min-width: 35ch;
     margin: 0 auto;
-
 }
 
 .side-image {
@@ -45,6 +45,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-width: max(30vw, 300px);
+    min-height: max(30vw, 100px);
 }
 
 .form-control{
@@ -59,17 +60,23 @@ input[type="email"],
 input[type="password"],
 input[type="number"] {
     padding: 8px;
-    margin: 12px 0;
-}
-
-button {
     width: 100%;
 }
 
+button {
+  flex: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
 label {
     position: absolute;
     left: 0.5rem;
-    top: 1.15rem
+    top: 0.5rem
 
 }
 
@@ -85,9 +92,10 @@ label {
 
 .flex-input {
     display: flex;
+    gap: 16px;
     > span {
         align-self: center;
-        margin-right: 8px;
+      
     }
 }
 
@@ -96,7 +104,15 @@ input[type="checkbox"] {
 }
 .confirm {
     display: flex;
-    gap: 1px;
+    gap: 8px;
+    > p {
+        text-align: left;
+    }
+
+    > input {
+        position: relative;
+        top: 3px;
+    }
 }
 
 .name {
