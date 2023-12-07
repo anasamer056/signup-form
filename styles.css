@@ -1,3 +1,7 @@
+:root {
+    --bg-color: #eee;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
@@ -15,7 +19,6 @@ html {
 
 body {
     height: 100vh;
-    background-color: #eee;
 }
 
 .main-container {
@@ -59,9 +62,11 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
-    padding: 8px;
+    padding: 12px 14px;
     width: 100%;
+    font-size: 0.9rem;
 }
+
 
 .submin-button {
   flex: 1;
@@ -73,12 +78,7 @@ form {
     gap: 16px;
     margin-top: 16px;
 }
-label {
-    position: absolute;
-    left: 0.5rem;
-    top: 0.5rem
 
-}
 
 .center{
     display: flex;
@@ -121,6 +121,10 @@ input[type="checkbox"] {
 
 /* style */
 
+
+body{
+    background-color: var(--bg-color);
+}
 h1, .logo {
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -140,6 +144,14 @@ p {
     color: #555555;
 }
 
+label {
+    font-size: 0.9rem;
+
+}
+
+input {
+    background: transparent;
+}
 .submit-button {
     padding: 8px 0;
     font-size: 0.9rem;
@@ -147,4 +159,25 @@ p {
     text-transform: uppercase;
     color: white;
     background: linear-gradient(to right, #063F4A, #035E3B);
+}
+
+/* animation */
+
+.form-control>label {
+    transition: 0.2s ease all;
+}
+
+input:focus + label
+ {
+    color: black;
+    top: -8px;
+    left: 5px;
+    background-color: var(--bg-color);
+    padding: 0 8px;
+}
+
+label {
+    position: absolute;
+    left: 15px;
+    top: 13px;
 }
