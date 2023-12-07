@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 :root {
-    --bg-color: #eee;
+    --bg-color: #ffffff;
+    --input-gap: 12px;
+    --input-border-color: #c0c0c0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
     box-sizing: border-box;
@@ -67,6 +71,13 @@ input[type="number"] {
     font-size: 0.9rem;
 }
 
+input::placeholder {
+    visibility: hidden;
+}
+
+label {
+    position: absolute;
+}
 
 .submin-button {
   flex: 1;
@@ -75,7 +86,7 @@ input[type="number"] {
 form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--input-gap);
     margin-top: 16px;
 }
 
@@ -90,7 +101,7 @@ form {
 
 .flex-input {
     display: flex;
-    gap: 16px;
+    gap: var(--input-gap);
     > span {
         align-self: center;
       
@@ -109,7 +120,10 @@ input[type="checkbox"] {
 
     > input {
         position: relative;
-        top: 3px;
+    }
+    > label {
+        position: static;
+        font-size: 0.8rem;
     }
 }
 
@@ -146,11 +160,12 @@ p {
 
 label {
     font-size: 0.9rem;
-
 }
 
 input {
     background: transparent;
+    border: 1px solid var(--input-border-color);
+    border-radius: 6px;
 }
 .submit-button {
     padding: 8px 0;
@@ -167,16 +182,17 @@ input {
     transition: 0.2s ease all;
 }
 
-input:focus + label
+input:focus:not([type="checkbox"]) + label,
+input:not(:placeholder-shown)+ label
  {
-    color: black;
-    top: -8px;
+    top: -6px;
     left: 5px;
     background-color: var(--bg-color);
-    padding: 0 8px;
+    padding: 0 6px;
+    font-size: 0.7rem;
 }
 
-label {
+input:placeholder-shown + label{
     position: absolute;
     left: 15px;
     top: 13px;
