@@ -233,7 +233,7 @@ label {
 }
 /* ------- Input -------- */
 
-input {
+input:not([type="checkbox"]){
     background: transparent;
     outline: 1px solid var(--input-border-color);
     border: 0;
@@ -241,7 +241,8 @@ input {
     transition: all 0.13s ease-in-out;
 }
 
-input:focus{
+
+input:focus-visible{
     outline: 3px solid rgb(47, 207, 138);
 }
    
