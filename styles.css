@@ -13,6 +13,8 @@
     --error-color: #D93025;
     --green-1: #063F4A;
     --green-2: #035E3B;
+    --inactive-green-1: #4f9baa;
+    --inactive-green-2: #6fc2a2;
     --input-border-color: #c0c0c0;
     --btn-border-color: rgb(42, 42, 42);
     --btn-hover-color: var(--bg-color);
@@ -201,7 +203,13 @@ label {
     font-size: 0.9rem;
 }
 
-
+button:disabled {
+    background: linear-gradient(to right, var(--inactive-green-1), var(--inactive-green-2));
+    cursor: auto;
+    &::after{
+        background-color: transparent;
+    }
+}
 
 .submit-button {
     border-radius: 6px;

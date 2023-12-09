@@ -1,3 +1,11 @@
+// Elements 
+const firstName = document.querySelector("#first-name");
+const lastName = document.querySelector("#last-name");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
+const confirmPassword = document.querySelector("#confirm-password");
+
+
 const root = document.documentElement;
 // Intialize the theme color to light 
 root.className = "light";
@@ -32,15 +40,20 @@ const dayInput = document.querySelector("#day");
 const dayError = document.querySelector("#day ~ div");
 
 dayInput.addEventListener("input", ()=>{
+    
     const day = parseInt(dayInput.value);
     if (day < 1 || day > 31) {
         dayInput.setCustomValidity("Invalid day");
     
+    } else if (dayInput.value ===""){
+        dayInput.setCustomValidity("Invalid input");
+        dayError.dataset.help = "Invalid input";
+
     } else if (isNaN(day)) {
         dayInput.setCustomValidity("Invalid input");
         dayError.dataset.help = "Invalid input";
-    }
-    else {
+
+    } else {
         dayInput.setCustomValidity("");
         dayError.dataset.help = "Invalid day";
     }
@@ -65,3 +78,27 @@ yearInput.addEventListener("input", ()=>{
         yearError.dataset.help = "Invalid year";
     }
 })
+
+// Deactivate submit button untill everything is valid 
+const submitBtn = document.querySelector('.submit-button');
+submitBtn.disabled = true;
+const form = document.querySelector("form");
+
+form.addEventListener("input", (event)=>{
+    if (event.target.type !== "checkbox"){
+        if (firstName.validity.valid &&
+            lastName.validity.valid &&
+            email.validity.valid &&
+            password.validity.valid &&
+            confirmPassword.validity.valid &&
+            dayInput.validity.valid &&
+            monthInput.validity.valid &&
+            yearInput.validity.valid) {
+                submitBtn.disabled = false;
+            }
+            else {
+                submitBtn.disabled = true;
+            }
+    }
+})
+
