@@ -107,6 +107,7 @@ input[type="tel"] {
 
 input::placeholder {
     visibility: hidden;
+    opacity: 0;
 }
 
 label {
@@ -139,6 +140,7 @@ form {
     display: flex;
     justify-content: center;
     text-align: center;
+    align-content: center;
 }
 
 .flex-input {
@@ -239,7 +241,12 @@ button:disabled {
     opacity: 0.15;
 }
 
-
+.theme-icon {
+    align-self: center;
+    > path {
+        fill: var(--main-text-color);
+    }
+}
 .theme-button {
     cursor: pointer;
     font-size: 22px;
@@ -247,16 +254,17 @@ button:disabled {
     height: 30px;
     border-radius: 100%;
     background-color: transparent;
-    color: var(--main-text-color);
     outline: 1px solid var(--btn-border-color);
     border: 0;
     transition: all 0.2s ease-in-out;
-
 }
 .theme-button:hover{
     outline: 1px solid transparent;
     color: var(--btn-hover-color);
     background: var(--green-2);
+    & path {
+        fill: var(--btn-hover-color);
+    }
 }
 /* ------- Input -------- */
 
