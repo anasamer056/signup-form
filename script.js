@@ -2,6 +2,11 @@ const root = document.documentElement;
 // Intialize the theme color to light 
 root.className = "light";
 
+// Theme button 
+const themeBtn = document.querySelector(".theme-button");
+themeBtn.addEventListener("click", ()=>{
+   root.className =  root.className === "light" ? "dark" : "light"
+});
 
 // Month Input Validation 
 const monthInput = document.querySelector("#month");

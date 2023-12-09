@@ -15,7 +15,19 @@
     --green-2: #035E3B;
     --input-border-color: #c0c0c0;
     --btn-border-color: rgb(42, 42, 42);
+    --btn-hover-color: var(--bg-color);
     --main-text-color: rgb(37, 56, 42);
+}
+
+:root.dark {
+    --bg-color: #1a1a1a;
+    --error-color: #D93025;
+    --green-1: #0a6577;
+    --green-2: #038251;
+    --input-border-color: #c0c0c0;
+    --btn-border-color: rgb(247, 247, 247);
+    --btn-hover-color: rgb(247, 247, 247);
+    --main-text-color: rgb(242, 242, 242);
 }
 
 
@@ -75,6 +87,11 @@ body {
     flex: 1;
     width: 100%;
 } 
+
+input[type="checkbox"] {
+    background-color: transparent;
+    accent-color: var(--green-2);
+}
 
 input[type="text"],
 input[type="email"],
@@ -170,7 +187,7 @@ h1 {
     font-size: 3rem;
     display: inline;
     text-align: center;
-    background: linear-gradient(to right, #063F4A, #035E3B);
+    background: linear-gradient(to right, var(--green-1), var(--green-2));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -223,12 +240,14 @@ label {
     border-radius: 100%;
     background-color: transparent;
     color: var(--main-text-color);
-    border: 1px solid var(--btn-border-color);
-    transition: 0.2s ease-in-out;
+    outline: 1px solid var(--btn-border-color);
+    border: 0;
+    transition: all 0.2s ease-in-out;
 
 }
 .theme-button:hover{
-    color: var(--bg-color);
+    outline: 1px solid transparent;
+    color: var(--btn-hover-color);
     background: var(--green-2);
 }
 /* ------- Input -------- */
