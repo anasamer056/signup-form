@@ -13,8 +13,9 @@
     --error-color: #D93025;
     --green-1: #063F4A;
     --green-2: #035E3B;
-    --inactive-green-1: #4f9baa;
-    --inactive-green-2: #6fc2a2;
+    --inactive-green-1: #787878;
+    --inactive-green-2: #aaaaaa;
+    --inactive-text-color: #d0d0d0;
     --input-border-color: #c0c0c0;
     --btn-border-color: rgb(42, 42, 42);
     --btn-hover-color: var(--bg-color);
@@ -26,6 +27,9 @@
     --error-color: #D93025;
     --green-1: #0a6577;
     --green-2: #038251;
+    --inactive-green-1: #3C3C3C;
+    --inactive-green-2: #545454;
+    --inactive-text-color: #777777;
     --input-border-color: #c0c0c0;
     --btn-border-color: rgb(247, 247, 247);
     --btn-hover-color: rgb(247, 247, 247);
@@ -207,6 +211,7 @@ label {
 
 button:disabled {
     background: linear-gradient(to right, var(--inactive-green-1), var(--inactive-green-2));
+    color: var(--inactive-text-color);
     cursor: auto;
     &::after{
         background-color: transparent;
