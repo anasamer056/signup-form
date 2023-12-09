@@ -13,6 +13,8 @@
     --error-color: #D93025;
     --green-1: #063F4A;
     --green-2: #035E3B;
+    --green-3: #095362;
+    --green-4: #047349;
     --input-border-color: #c0c0c0;
     --btn-border-color: rgb(42, 42, 42);
     --main-text-color: rgb(37, 56, 42);
@@ -192,6 +194,7 @@ input {
 
 .submit-button {
     border-radius: 6px;
+    border: 0;
     cursor: pointer;
     padding: 8px 0;
     font-size: 0.9rem;
@@ -201,16 +204,20 @@ input {
     background: linear-gradient(to right, var(--green-1), var(--green-2));
 }
 
-
-.submit-button:hover::before{
-    content: " s";
+.submit-button::after{
+    content: "";
     position: absolute;
     top:0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.1;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
     background-color: #ffffff;
+}
+
+.submit-button:hover::after{
+    opacity: 0.15;
 }
 
 
