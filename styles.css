@@ -20,6 +20,9 @@
     --btn-border-color: rgb(42, 42, 42);
     --btn-hover-color: var(--bg-color);
     --main-text-color: rgb(37, 56, 42);
+    --link-color: #1ab379;;
+    --tool-tip-bg: var(--bg-color);
+    --drop-shadow: drop-shadow(rgba(0, 0, 0, 0.3) 0px 4px 8px)
 }
 
 :root.dark {
@@ -34,6 +37,10 @@
     --btn-border-color: rgb(247, 247, 247);
     --btn-hover-color: rgb(247, 247, 247);
     --main-text-color: rgb(242, 242, 242);
+    --link-color: #2fdb99;
+    --tool-tip-bg: #3C3C3C;
+    --drop-shadow: drop-shadow(rgba(0, 0, 0, 0.8) 0px 4px 8px)
+
 }
 
 
@@ -271,6 +278,83 @@ button:disabled {
         fill: var(--btn-hover-color);
     }
 }
+
+.tool-tip {
+   
+    position: relative;
+    outline: 9px solid transparent;
+    & a {
+        color: var(--link-color);
+    }
+    & svg {
+        fill: var(--main-text-color);
+        vertical-align: top;
+
+    }
+
+    & .box {
+        pointer-events: none;
+
+        position: absolute;  
+        right: -8px; 
+        bottom: 40px;
+        width: 200px;
+        text-align: center;
+        opacity: 0;
+        background-color: var(--tool-tip-bg);
+        border: 1px solid var(--input-border-color);
+        border-radius: 5px;
+        padding: 10px;
+        border: 0;
+        z-index: 1;
+        filter: var(--drop-shadow);
+        transform: translateY(10px);
+        transition: all .25s ease-out;
+        
+        &::before {
+            pointer-events: none;
+
+            display: none;
+            position: absolute;
+            bottom: -10px;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 12px;
+            right: 0;
+            border: 5px solid yellow;
+        }
+        
+        &::after {
+            pointer-events: none;
+            border: 20px solid var(--tool-tip-bg);
+            border-color:  var(--tool-tip-bg) transparent  transparent transparent;
+            top: calc(100% - 7px);
+            border-radius: 100px;
+            height: 0;
+            width: 0;
+            content: "";
+            right:-5px;
+            margin-left: -13px;
+            position: absolute;
+            
+        }
+    }
+}
+
+.click-radius {
+    
+    opacity: 0.5;
+    background-color: yellow;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -18px;
+    left: -5px;
+
+}
+
+
 /* ------- Input -------- */
 
 input:not([type="checkbox"]){
@@ -340,4 +424,18 @@ input:placeholder-shown + label{
     position: absolute;
     left: 15px;
     top: 13px;
+}
+
+.tool-tip:hover .box {
+    opacity: 1;
+    display: inline-block;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+   -o-transform: translateY(0px);
+    transform: translateY(0px);
+    &::after {
+        display: inline-block;
+    }
 }
