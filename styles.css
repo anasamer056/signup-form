@@ -95,8 +95,6 @@ body {
 
 .form-control{
     position: relative;
-    display: flex;
-    flex-direction: column;
     flex: 1;
     width: 100%;
 } 
@@ -188,6 +186,20 @@ input[type="checkbox"] {
     display: flex;
     width: 100% ;
   
+}
+
+.password-container input{
+    padding-right: 35px;    
+}
+.eye-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    bottom: 25%;
+    & path,
+    & circle{
+        stroke:var(--main-text-color)
+    }
 }
 
 /* style */
