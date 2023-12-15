@@ -20,6 +20,7 @@
     --btn-border-color: rgb(42, 42, 42);
     --btn-hover-color: var(--bg-color);
     --main-text-color: rgb(37, 56, 42);
+    --light-text-color: rgb(86, 98, 89);
     --link-color: #1ab379;;
     --tool-tip-bg: var(--bg-color);
     --drop-shadow: drop-shadow(rgba(0, 0, 0, 0.3) 0px 4px 8px)
@@ -37,6 +38,7 @@
     --btn-border-color: rgb(247, 247, 247);
     --btn-hover-color: rgb(247, 247, 247);
     --main-text-color: rgb(242, 242, 242);
+    --light-text-color: rgb(188, 190, 188);
     --link-color: #2fdb99;
     --tool-tip-bg: #3C3C3C;
     --drop-shadow: drop-shadow(rgba(0, 0, 0, 0.8) 0px 4px 8px)
@@ -157,7 +159,6 @@ form {
     gap: var(--input-horizontal-gap);
     > span {
         align-self: center;
-      
     }
 }
 
@@ -228,6 +229,11 @@ p {
 
 label {
     font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+input[type="checkbox"] + label{
+    color: var(--main-text-color);
 }
 
 button:disabled {
@@ -411,7 +417,7 @@ input:user-invalid:focus{
 }
 
 input:focus:not([type="checkbox"]) + label,
-input:not(:placeholder-shown)+ label
+input:not(:placeholder-shown) + label
  {
     top: -6px;
     left: 8px;
@@ -437,3 +443,5 @@ input:placeholder-shown + label{
     transform: translateY(0px);
  
 }
+
+
