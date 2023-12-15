@@ -168,7 +168,7 @@ input[type="checkbox"] {
 }
 .confirm {
     display: flex;
-    margin: -5px 0px;
+    margin: -10px 0px;
     > p {
         text-align: left;
     }
@@ -178,7 +178,9 @@ input[type="checkbox"] {
     }
     > label {
         position: static;
-        font-size: 0.8rem;
+        font-size: 60px;
+        vertical-align: middle;
+        line-height: 1.1;
     }
 }
 
@@ -280,7 +282,7 @@ button:disabled {
 }
 
 .tool-tip {
-   
+    height: 10px;
     position: relative;
     outline: 9px solid transparent;
     & a {
@@ -289,70 +291,56 @@ button:disabled {
     & svg {
         fill: var(--main-text-color);
         vertical-align: top;
-
     }
 
-    & .box {
-        pointer-events: none;
-
-        position: absolute;  
-        right: -8px; 
-        bottom: 40px;
-        width: 200px;
-        text-align: center;
-        opacity: 0;
-        background-color: var(--tool-tip-bg);
-        border: 1px solid var(--input-border-color);
-        border-radius: 5px;
-        padding: 10px;
-        border: 0;
-        z-index: 1;
-        filter: var(--drop-shadow);
-        transform: translateY(10px);
-        transition: all .25s ease-out;
-        
-        &::before {
-            pointer-events: none;
-
-            display: none;
-            position: absolute;
-            bottom: -10px;
-            content: "";
-            display: block;
-            width: 100%;
-            height: 12px;
-            right: 0;
-            border: 5px solid yellow;
-        }
-        
-        &::after {
-            pointer-events: none;
-            border: 20px solid var(--tool-tip-bg);
-            border-color:  var(--tool-tip-bg) transparent  transparent transparent;
-            top: calc(100% - 7px);
-            border-radius: 100px;
-            height: 0;
-            width: 0;
-            content: "";
-            right:-5px;
-            margin-left: -13px;
-            position: absolute;
-            
-        }
-    }
 }
 
-.click-radius {
+.box {
+    pointer-events: none;
+    position: absolute;  
+    right: -8px; 
+    bottom: 30px;
+    width: 200px;
+    text-align: center;
+    opacity: 0;
+    background-color: var(--tool-tip-bg);
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    padding: 10px;
+    border: 0;
+    z-index: 1;
+    filter: var(--drop-shadow);
+    transform: translateY(10px);
+    transition: all .25s ease-out;
     
-    opacity: 0.5;
-    background-color: yellow;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: -18px;
-    left: -5px;
+    &::before {
 
+        display: none;
+        position: absolute;
+        bottom: -30px;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 30px;
+        right: 0;
+    }
+    
+    &::after {
+        pointer-events: none;
+        border: 20px solid var(--tool-tip-bg);
+        border-color:  var(--tool-tip-bg) transparent  transparent transparent;
+        top: calc(100% - 7px);
+        border-radius: 100px;
+        height: 0;
+        width: 0;
+        content: "";
+        right:-5px;
+        margin-left: -13px;
+        position: absolute;
+        
+    }
 }
+
 
 
 /* ------- Input -------- */
@@ -435,7 +423,5 @@ input:placeholder-shown + label{
   -ms-transform: translateY(0px);
    -o-transform: translateY(0px);
     transform: translateY(0px);
-    &::after {
-        display: inline-block;
-    }
+ 
 }

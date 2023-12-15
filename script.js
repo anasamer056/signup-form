@@ -46,8 +46,7 @@ dayInput.addEventListener("input", ()=>{
         dayInput.setCustomValidity("Invalid day");
     
     } else if (dayInput.value ===""){
-        dayInput.setCustomValidity("Invalid input");
-        dayError.dataset.help = "Invalid input";
+        dayInput.setCustomValidity("");
 
     } else if (isNaN(day)) {
         dayInput.setCustomValidity("Invalid input");
