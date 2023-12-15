@@ -4,6 +4,9 @@ const lastName = document.querySelector("#last-name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
+const dayInput = document.querySelector("#day");
+const monthInput = document.querySelector("#month");
+const yearInput = document.querySelector("#year");
 
 
 const root = document.documentElement;
@@ -16,67 +19,36 @@ themeBtn.addEventListener("click", ()=>{
    root.className =  root.className === "light" ? "dark" : "light"
 });
 
-// Month Input Validation 
-const monthInput = document.querySelector("#month");
-const monthError = document.querySelector("#month ~ div");
+// Confirm Password Validation 
 
-monthInput.addEventListener("input", ()=>{
-    const month = parseInt(monthInput.value);
-    if (month < 1 || month > 12) {
-        monthInput.setCustomValidity("Invalid month");
+
+
+// Birthday Input Validation 
+
+monthInput.addEventListener("input", handleBirthday)
+dayInput.addEventListener("input", handleBirthday)
+yearInput.addEventListener("input", handleBirthday)
+
+function handleBirthday(event) {
+    const value = parseInt(event.target.value);
+    const errElem = document.querySelector(`#${event.target.id} ~ div`)
+    const lowerBound = event.target.dataset.lower;
+    const upperBound = event.target.dataset.upper ?? Date().getFullYear();
+
+    if (value < lowerBound || value > upperBound) {
+        event.target.setCustomValidity(`Invalid ${event.target.id}`);
+        errElem.dataset.help = `Invalid ${event.target.id}`
     
-    } else if (isNaN(month)) {
-        monthInput.setCustomValidity("Invalid input");
-        monthError.dataset.help = "Invalid input";
-    }
-    else {
-        monthInput.setCustomValidity("");
-        monthError.dataset.help = "Invalid month";
-    }
-})
+    } else if (event.target.value ===""){
+        event.target.setCustomValidity("");
 
-// Day Input Validation 
-const dayInput = document.querySelector("#day");
-const dayError = document.querySelector("#day ~ div");
-
-dayInput.addEventListener("input", ()=>{
-    
-    const day = parseInt(dayInput.value);
-    if (day < 1 || day > 31) {
-        dayInput.setCustomValidity("Invalid day");
-    
-    } else if (dayInput.value ===""){
-        dayInput.setCustomValidity("");
-
-    } else if (isNaN(day)) {
-        dayInput.setCustomValidity("Invalid input");
-        dayError.dataset.help = "Invalid input";
+    } else if (isNaN(value)) {
+        event.target.setCustomValidity("Invalid input");
 
     } else {
-        dayInput.setCustomValidity("");
-        dayError.dataset.help = "Invalid day";
+        event.target.setCustomValidity("");
     }
-})
-
-// Year Input Validation 
-const yearInput = document.querySelector("#year");
-const yearError = document.querySelector("#year ~ div");
-
-yearInput.addEventListener("input", ()=>{
-    const year = parseInt(yearInput.value);
-    if (year < 1900 || year > new Date().getFullYear()) {
-        yearInput.setCustomValidity("Invalid year");
-    
-        yearError.dataset.help = "Invalid year"
-    } else if (isNaN(year)) {
-        yearInput.setCustomValidity("Invalid input");
-        yearError.dataset.help = "Invalid input";
-    }
-    else {
-        yearInput.setCustomValidity("");
-        yearError.dataset.help = "Invalid year";
-    }
-})
+}
 
 // Deactivate submit button untill everything is valid 
 const submitBtn = document.querySelector('.submit-button');

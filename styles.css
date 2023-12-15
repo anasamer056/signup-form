@@ -168,7 +168,7 @@ input[type="checkbox"] {
 }
 .confirm {
     display: flex;
-    margin: -10px 0px;
+    margin: -5px 0px;
     > p {
         text-align: left;
     }

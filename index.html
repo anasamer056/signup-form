@@ -77,23 +77,23 @@
                         <span>Birthday: </span>
 
                         <div class="form-control">
-                            <input type="tel" name="birth-day" id="day" placeholder="Day">
+                            <input type="tel" name="birth-day" id="day" placeholder="Day" data-lower="1" data-upper="31">
                             <label for="day">
                                 Day
                             </label>
-                            <div data-help="Invalid day"></div>
+                            <div data-help="Invalid input"></div>
                         </div>  
 
                         <div class="form-control">
-                            <input type="tel" name="birth-month" id="month" placeholder="Month" >
+                            <input type="tel" name="birth-month" id="month" placeholder="Month" data-lower="1" data-upper="12">
                             <label for="month">
                                 Month
                             </label>
-                            <div data-help="Invalid month"></div>
+                            <div data-help="Invalid input"></div>
                         </div>
                         
                         <div class="form-control">
-                            <input type="tel" name="birth-year" id="year" placeholder="Year">
+                            <input type="tel" name="birth-year" id="year" placeholder="Year" data-lower="1900">
                             <label for="year">
                                 Year
                             </label>
