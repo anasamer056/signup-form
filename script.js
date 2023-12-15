@@ -20,9 +20,16 @@ themeBtn.addEventListener("click", ()=>{
 });
 
 // Confirm Password Validation 
+password.addEventListener ("input", handlePasswordConfirm)
+confirmPassword.addEventListener("input", handlePasswordConfirm)
 
-
-
+function handlePasswordConfirm (event){
+    if (password.value !== confirmPassword.value) {
+        confirmPassword.setCustomValidity("Passwords don't match");
+    } else {
+        confirmPassword.setCustomValidity("")
+    }
+}
 // Birthday Input Validation 
 
 monthInput.addEventListener("input", handleBirthday)
